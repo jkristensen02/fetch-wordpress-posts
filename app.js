@@ -5,8 +5,8 @@ window.addEventListener("load", initApp); // When the page is loaded, run initAp
 // Function to initialize the Web App
 async function initApp() {
   console.log("initApp: app.js is running 🎉"); // Log to the console that the app is running
-  const posts = await getPosts();
-  displayPosts(posts);
+  //const posts = await getPosts();
+  //displayPosts(posts);
 }
 async function getPosts(){
   const response = await fetch("https://headless.cederdorff.dk/wp-json/wp/v2/posts?acf_format=standard ");
