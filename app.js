@@ -13,3 +13,9 @@ async function getPosts(){
   const data = await response.json();
   return data;
 }
+function displayPosts(posts){
+  const postsList = document.querySelector("#posts-list");
+  for(const post of posts){
+    console.log(post);
+  }
+}
