@@ -6,7 +6,7 @@ window.addEventListener("load", initApp); // When the page is loaded, run initAp
 async function initApp() {
   console.log("initApp: app.js is running 🎉"); // Log to the console that the app is running
   const posts = await getPosts();
-  console.log(posts);
+  displayPosts(posts);
 }
 async function getPosts(){
   const response = await fetch("https://headless.cederdorff.dk/wp-json/wp/v2/posts?acf_format=standard ");
@@ -16,6 +16,11 @@ async function getPosts(){
 function displayPosts(posts){
   const postsList = document.querySelector("#posts-list");
   for(const post of posts){
-    console.log(post);
+    postsList.insertAdjacentHTML(
+      "beforeend",
+      /*html*/ `
+        <li>${post.title.rendered}</li>
+      `
+    );
   }
 }
